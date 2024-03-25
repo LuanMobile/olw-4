@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Hash;
 
 class ClientController extends Controller
 {
+    // implementado as regras de gates ao model Client 
+    public function __construct()
+    { 
+        $this->authorizeResource(Client::class, 'client');
+    }
+
     /**
      * Display a listing of the resource.
      *
